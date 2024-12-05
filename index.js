@@ -27,6 +27,22 @@ calculateBtn.addEventListener('click', function() {
         <p>Hourly Earnings: $${hourlyEarnings.toFixed(2)}</p>
     `;
 
+fetch('https://script.google.com/macros/s/AKfycbzlIZs4J6iHqPO-M20hdGJEuHWMqDpCIzPaIqzRyGAvtytx4wKkm0z2XWgmKqL8PxR0/exec', {
+    method: 'POST',
+    body: JSON.stringify({
+        miles: miles,
+        mpg: mpg,
+        wages: wages,
+        fuel: fuel,
+        time: time,
+        fuelCost: fuelCost,
+        netEarnings: netEarnings,
+        hourlyEarnings: hourlyEarnings
+    })
+})
+.then(response => console.log('Data saved'))
+.catch(error => console.error('Error:', error));
+    
     console.log('Net Earnings:', netEarnings);
  });
 
