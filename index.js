@@ -27,6 +27,18 @@ calculateBtn.addEventListener('click', function() {
         <p>Hourly Earnings: $${hourlyEarnings.toFixed(2)}</p>
     `;
 
+// Add after calculations but before fetch
+console.log({
+    miles,
+    mpg,
+    wages,
+    fuel,
+    time,
+    fuelCost,
+    netEarnings,
+    hourlyEarnings
+});
+    
 fetch('https://script.google.com/macros/s/AKfycbzlIZs4J6iHqPO-M20hdGJEuHWMqDpCIzPaIqzRyGAvtytx4wKkm0z2XWgmKqL8PxR0/exec', {
     method: 'POST',
     body: JSON.stringify({
